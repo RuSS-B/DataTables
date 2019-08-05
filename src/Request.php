@@ -19,6 +19,8 @@ use Symfony\Component\HttpFoundation\Request as HttpRequest;
  */
 class Request
 {
+    const DEFAULT_LIMIT = 25;
+
     /**
      * @var int
      */
@@ -47,7 +49,7 @@ class Request
     public function __construct(HttpRequest $request)
     {
         $this->draw   = (int)$request->get('draw');
-        $this->limit  = (int)$request->get('length');
+        $this->limit  = (int)$request->get('length', self::DEFAULT_LIMIT);
         $this->offset = (int)$request->get('start');
 
         $this->params = new ParameterBag($request->query->all());
