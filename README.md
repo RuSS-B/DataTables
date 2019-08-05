@@ -1,4 +1,4 @@
-# DataTables
+# DataTables Backend
 PHP Library to process backend requests from DataTables.js plugin
 
 ## Examples
